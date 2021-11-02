@@ -1,0 +1,29 @@
+#Login Query:
+	> db.login.find({$and:[{"email":"demo@123.com"},{"password":"demo123"}]},{"_id":0})
+{ "email" : "demo@123.com", "password" : "demo123" }
+
+#Add/insert project:
+	db.project.insert({"projectName": "DemoProject456",
+						"reason": "dealership",
+						"type": "vendor",
+						"division": "glass",
+						"category": "quality d",
+						"priority": "high",
+						"department": "stores",
+						"startDate": "2-jul-2020",
+						"endDate": "null",
+						"location": "delhi",
+						"status": "registered"
+						})
+						
+#List of all data of projects:
+	db.project.find().pretty()
+
+#Update Status:
+	> db.project.update({"projectName":"DemoProject456"},{$set:{"status":"closed"}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+#Get all counters of projects with status as Registed, Closed, Running, Cancelled:
+	> db.getCollection("project").aggregate([{$group:{_id:{status:"$status"},count:{$sum:1}}}])
+{ "_id" : { "status" : "registered" }, "count" : 1 }
+{ "_id" : { "status" : "closed" }, "count" : 1 }

@@ -1,0 +1,51 @@
+{
+    "reason": [
+        "business",
+        "dealership",
+        "transport"
+    ],
+    "type": [
+        "internal",
+        "external",
+        "vendor"
+    ],
+    "division": [
+        "compressor",
+        "filters",
+        "pumps",
+        "glass",
+        "water heater"
+    ],
+    "category": [
+        "quality a",
+        "quality b",
+        "quality c",
+        "quality d"
+    ],
+    "priority": [
+        "high",
+        "low",
+        "medium"
+    ],
+    "department": [
+        "strategy",
+        "finance",
+        "quality",
+        "maintenance",
+        "stores",
+        "hr"
+    ],
+    "location": [
+        "pune",
+        "mumbai",
+        "delhi",
+        "calcutta",
+        "bangalore"
+    ],
+    "status": [
+        "registered",
+        "closed",
+        "running",
+        "cancelled"
+    ]
+}
